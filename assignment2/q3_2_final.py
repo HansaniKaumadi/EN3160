@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load input images
-background_path = "image 2.jpg"
-overlay_path = "floor paint.jpg"
+background_path = "floor.jpeg"
+overlay_path = "lava.jpeg"
 
 background_img = cv2.imread(background_path)
 bg_copy = background_img.copy()
