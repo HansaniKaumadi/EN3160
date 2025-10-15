@@ -56,7 +56,7 @@ mask = np.zeros_like(background_img, dtype=np.uint8)
 cv2.fillConvexPoly(mask, pts_background.astype(int), (255, 255, 255))
 
 # Blend both images together
-final_result = cv2.addWeighted(background_img, 1, warped_overlay, 0.2, -1.5)
+final_result = cv2.addWeighted(background_img, 0.8, warped_overlay, 1, -1.5)
 
 #Display the final output
 plt.imshow(cv2.cvtColor(final_result, cv2.COLOR_BGR2RGB))
