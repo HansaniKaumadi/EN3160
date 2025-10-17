@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # Load input images
 background_path = "plain_billboard.jpg"
-overlay_path = "coke add.jpg"
+overlay_path = "surfexcel.jpg"
 
 background_img = cv2.imread(background_path)
 bg_copy = background_img.copy()
@@ -56,10 +56,11 @@ mask = np.zeros_like(background_img, dtype=np.uint8)
 cv2.fillConvexPoly(mask, pts_background.astype(int), (255, 255, 255))
 
 # Blend both images together
-final_result = cv2.addWeighted(background_img, 0.8, warped_overlay, 1.5, 0.5)
+final_result = cv2.addWeighted(background_img, 0.6, warped_overlay, 1, -1.5)
 
 #Display the final output
 plt.imshow(cv2.cvtColor(final_result, cv2.COLOR_BGR2RGB))
 plt.axis('off')
 plt.title("Warped and Blended Overlay")
 plt.show()
+
